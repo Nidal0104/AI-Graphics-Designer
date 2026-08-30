@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nidal Ahmed | AI-Powered Graphic Designer</title>
+<meta name="description" content="Portfolio of Nidal Ahmed, an AI-powered graphic designer creating social media graphics, promotional visuals, product creatives, restaurant marketing content, and AI-powered visual experiences.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nidal Ahmed | AI-Powered Graphic Designer">
+<meta property="og:description" content="AI-powered creative work for restaurants, entrepreneurs, brands and modern businesses.">
+<meta property="og:image" content="assets/images/og-preview.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:            #FAF8F4;
+  --bg-alt:        #F2EEE6;
+  --surface:       #FFFFFF;
+  --border:        #E7E2D8;
+  --ink:           #17151F;
+  --ink-soft:      #524F5C;
+  --ink-faint:     #8A8794;
+  --accent:        #5B3DF5;
+  --accent-2:      #8B6BFF;
+  --accent-ink:    #FFFFFF;
+  --accent-soft:   #EFEBFF;
+  --radius-sm:     10px;
+  --radius-md:     18px;
+  --radius-lg:     28px;
+  --shadow-sm:     0 2px 10px rgba(23,21,31,0.06);
+  --shadow-md:     0 12px 32px rgba(23,21,31,0.10);
+  --shadow-lg:     0 24px 60px rgba(23,21,31,0.14);
+  --font-display:  'Space Grotesk', sans-serif;
+  --font-body:     'Inter', sans-serif;
+  --maxw:          1200px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer; border:none; background:none;}
+ul{list-style:none;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+section{position:relative;}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;}
+
+.eyebrow{
+  font-family:var(--font-display);
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:16px;
+}
+.eyebrow::before{
+  content:"";
+  width:22px; height:1.5px;
+  background:var(--accent);
+  display:inline-block;
+}
+h1,h2,h3,h4{font-family:var(--font-display); font-weight:600; letter-spacing:-0.02em; color:var(--ink);}
+.section-head{max-width:640px; margin-bottom:56px;}
+.section-head h2{font-size:clamp(30px,4vw,44px); line-height:1.1; margin-bottom:14px;}
+.section-head p{font-size:17px; color:var(--ink-soft);}
+.section-pad{padding:110px 0;}
+@media (max-width:768px){.section-pad{padding:76px 0;} .wrap{padding:0 22px;}}
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:15px 28px; border-radius:100px;
+  font-size:15px; font-weight:600; font-family:var(--font-body);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--ink); color:#fff;}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-md); background:var(--accent);}
+.btn-outline{border:1.5px solid var(--border); color:var(--ink); background:var(--surface);}
+.btn-outline:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-2px); box-shadow:var(--shadow-sm);}
+.btn-accent{background:var(--accent); color:#fff;}
+.btn-accent:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(91,61,245,.30); background:#4C2EE0;}
+.btn-sm{padding:10px 20px; font-size:13.5px;}
+
+/* ============ NAV ============ */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  padding:22px 0;
+  transition:padding .3s ease, background .3s ease, box-shadow .3s ease;
+}
+header.scrolled{
+  padding:12px 0;
+  background:rgba(250,248,244,0.88);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 1px 0 rgba(23,21,31,0.06);
+}
+nav{display:flex; align-items:center; justify-content:space-between;}
+.logo{font-family:var(--font-display); font-weight:700; font-size:20px; letter-spacing:-0.01em;}
+.logo span{color:var(--accent);}
+.nav-links{display:flex; align-items:center; gap:38px;}
+.nav-links a{font-size:14.5px; font-weight:500; color:var(--ink-soft); transition:color .2s ease; position:relative;}
+.nav-links a:hover{color:var(--ink);}
+.nav-links a::after{
+  content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--accent);
+  transition:width .25s ease;
+}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{display:flex; align-items:center; gap:18px;}
+.burger{display:none; flex-direction:column; gap:5px; width:26px; z-index:220;}
+.burger span{height:2px; width:100%; background:var(--ink); border-radius:2px; transition:all .3s ease;}
+.mobile-panel{
+  position:fixed; inset:0; background:var(--bg); z-index:210;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px;
+  transform:translateY(-100%); transition:transform .4s cubic-bezier(.65,0,.35,1);
+}
+.mobile-panel.open{transform:translateY(0);}
+.mobile-panel a{font-family:var(--font-display); font-size:28px; font-weight:600;}
+
+@media (max-width:900px){
+  .nav-links{display:none;}
+  .nav-cta .btn{display:none;}
+  .burger{display:flex;}
+}
+
+/* ============ HERO ============ */
+.hero{
+  padding:168px 0 100px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-glow{
+  position:absolute; top:-180px; right:-160px; width:640px; height:640px;
+  background:radial-gradient(circle, rgba(91,61,245,0.16) 0%, rgba(91,61,245,0) 70%);
+  filter:blur(10px); pointer-events:none; z-index:0;
+}
+.hero-grid{
+  position:absolute; inset:0; z-index:0; opacity:.5;
+  background-image:linear-gradient(to right, rgba(23,21,31,0.035) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(23,21,31,0.035) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 900px 500px at 20% 20%, black 40%, transparent 85%);
+}
+.hero-inner{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center;
+}
+.hero-profile{
+  width:56px; height:56px; border-radius:50%;
+  border:2px solid var(--surface); box-shadow:var(--shadow-sm);
+  overflow:hidden; margin-bottom:26px; position:relative; background:var(--accent-soft);
+}
+.hero-profile img{width:100%; height:100%; object-fit:cover;}
+.hero-profile .fallback{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:700; color:var(--accent); font-size:18px;
+}
+.hero h1{font-size:clamp(40px,5.4vw,66px); line-height:1.03; margin-bottom:22px;}
+.hero h1 .accent-word{color:var(--accent); font-style:italic; font-weight:500;}
+.hero-sub{font-size:18px; color:var(--ink-soft); max-width:480px; margin-bottom:28px;}
+.hero-name{font-size:14px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px;}
+
+.tags{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:36px;}
+.tag{
+  font-size:12.5px; font-weight:500; color:var(--ink-soft);
+  border:1px solid var(--border); padding:7px 14px; border-radius:100px; background:var(--surface);
+}
+.hero-cta{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:26px;}
+.hero-credibility{font-size:13.5px; color:var(--ink-faint); display:flex; align-items:center; gap:8px;}
+.hero-credibility svg{flex-shrink:0;}
+
+/* hero visual cluster */
+.hero-visual{position:relative; height:460px;}
+.hv-card{
+  position:absolute; border-radius:16px; overflow:hidden; box-shadow:var(--shadow-lg);
+  border:6px solid var(--surface); background:var(--surface);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1);
+}
+.hv-card img{width:100%; height:100%; object-fit:cover;}
+.hv-1{width:230px; height:290px; top:6%; left:6%; transform:rotate(-9deg); z-index:2;}
+.hv-2{width:210px; height:260px; top:34%; right:2%; transform:rotate(7deg); z-index:3;}
+.hv-3{width:180px; height:180px; bottom:2%; left:26%; transform:rotate(-4deg); z-index:1;}
+.hero-visual:hover .hv-1{transform:rotate(-13deg) translateY(-6px);}
+.hero-visual:hover .hv-2{transform:rotate(10deg) translateY(-6px);}
+.hero-visual:hover .hv-3{transform:rotate(-1deg) translateY(-6px);}
+.hv-badge{
+  position:absolute; top:0; right:14%; z-index:4;
+  background:var(--ink); color:#fff; font-family:var(--font-display); font-size:12.5px; font-weight:600;
+  padding:9px 16px; border-radius:100px; box-shadow:var(--shadow-md);
+  display:flex; align-items:center; gap:7px;
+}
+.hv-badge .dot{width:7px; height:7px; border-radius:50%; background:#63E6A3; animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.35;}}
+
+@media (max-width:980px){
+  .hero-inner{grid-template-columns:1fr; text-align:left;}
+  .hero-visual{height:340px; margin-top:20px;}
+  .hv-1{width:170px; height:210px;}
+  .hv-2{width:150px; height:190px;}
+  .hv-3{width:130px; height:130px;}
+}
+@media (max-width:520px){
+  .hero{padding-top:140px;}
+  .hero-visual{height:300px;}
+}
+
+/* ============ REVEAL ============ */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+/* ============ WORK ============ */
+.filters{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:46px;}
+.filter-btn{
+  padding:10px 20px; border-radius:100px; font-size:13.5px; font-weight:600;
+  border:1.5px solid var(--border); color:var(--ink-soft); background:var(--surface);
+  transition:all .2s ease;
+}
+.filter-btn:hover{border-color:var(--accent); color:var(--accent);}
+.filter-btn.active{background:var(--ink); border-color:var(--ink); color:#fff;}
+
+.work-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:26px;
+}
+.work-grid > div:nth-child(6n+1){grid-row:span 2;}
+@media (max-width:980px){.work-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:620px){.work-grid{grid-template-columns:1fr;} .work-grid > div{grid-row:span 1 !important;}}
+
+.work-card{
+  position:relative; border-radius:var(--radius-md); overflow:hidden; cursor:pointer;
+  background:var(--surface); border:1px solid var(--border);
+  box-shadow:var(--shadow-sm);
+  transition:box-shadow .3s ease, transform .3s ease;
+  height:100%;
+}
+.work-card:hover{box-shadow:var(--shadow-lg); transform:translateY(-4px);}
+.work-media{position:relative; overflow:hidden; height:100%; min-height:230px;}
+.work-media img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+.work-card:hover .work-media img{transform:scale(1.07);}
+.work-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(23,21,31,0) 40%, rgba(23,21,31,0.86) 100%);
+  opacity:0; transition:opacity .3s ease;
+  display:flex; flex-direction:column; justify-content:flex-end; padding:22px;
+}
+.work-card:hover .work-overlay{opacity:1;}
+.work-overlay .cat{font-size:11.5px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#C9BBFF; margin-bottom:6px;}
+.work-overlay h4{color:#fff; font-size:18px; margin-bottom:8px;}
+.work-overlay .view{font-size:12.5px; color:#fff; display:flex; align-items:center; gap:6px; font-weight:600;}
+.empty-state{
+  grid-column:1/-1; text-align:center; padding:70px 20px; color:var(--ink-faint);
+  border:1.5px dashed var(--border); border-radius:var(--radius-md); font-size:15px;
+}
+.empty-state strong{display:block; color:var(--ink-soft); font-family:var(--font-display); font-size:19px; margin-bottom:8px;}
+
+/* ============ LIGHTBOX ============ */
+.lightbox{
+  position:fixed; inset:0; z-index:400; background:rgba(17,15,24,0.92);
+  display:flex; align-items:center; justify-content:center; padding:26px;
+  opacity:0; visibility:hidden; transition:opacity .3s ease;
+}
+.lightbox.open{opacity:1; visibility:visible;}
+.lb-inner{
+  max-width:1000px; width:100%; max-height:90vh; display:grid; grid-template-columns:1.3fr 1fr;
+  background:var(--surface); border-radius:var(--radius-lg); overflow:hidden;
+  transform:scale(.94); transition:transform .35s cubic-bezier(.2,.8,.2,1);
+}
+.lightbox.open .lb-inner{transform:scale(1);}
+.lb-media{background:#0F0D16; display:flex; align-items:center; justify-content:center; max-height:90vh;}
+.lb-media img{width:100%; height:100%; object-fit:contain; max-height:90vh;}
+.lb-info{padding:38px; display:flex; flex-direction:column; justify-content:center; gap:14px;}
+.lb-info .cat{color:var(--accent); font-weight:600; font-size:12.5px; letter-spacing:.08em; text-transform:uppercase;}
+.lb-info h3{font-size:26px;}
+.lb-info p{color:var(--ink-soft); font-size:15px;}
+.lb-close{
+  position:absolute; top:22px; right:26px; width:42px; height:42px; border-radius:50%;
+  background:rgba(255,255,255,0.1); color:#fff; display:flex; align-items:center; justify-content:center;
+  font-size:20px; transition:background .2s ease;
+}
+.lb-close:hover{background:rgba(255,255,255,0.22);}
+.lb-nav{
+  position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%;
+  background:rgba(255,255,255,0.1); color:#fff; display:flex; align-items:center; justify-content:center;
+  transition:background .2s ease;
+}
+.lb-nav:hover{background:rgba(255,255,255,0.22);}
+.lb-prev{left:20px;} .lb-next{right:20px;}
+@media (max-width:768px){
+  .lb-inner{grid-template-columns:1fr; overflow-y:auto;}
+  .lb-media{max-height:44vh;}
+  .lb-media img{max-height:44vh;}
+}
+
+/* ============ SERVICES ============ */
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+@media (max-width:980px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:620px){.services-grid{grid-template-columns:1fr;}}
+.service-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:32px 28px; transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.service-card:hover{transform:translateY(-5px); box-shadow:var(--shadow-md); border-color:transparent;}
+.service-icon{
+  width:46px; height:46px; border-radius:12px; background:var(--accent-soft); color:var(--accent);
+  display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+}
+.service-card h3{font-size:19px; margin-bottom:10px;}
+.service-card p{color:var(--ink-soft); font-size:14.5px;}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:start;}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr; gap:40px;}}
+.about-grid h2{font-size:clamp(28px,3.6vw,38px); line-height:1.15; margin-bottom:20px;}
+.about-grid > div:first-child p{color:var(--ink-soft); font-size:16.5px;}
+.badges{display:flex; flex-wrap:wrap; gap:11px; margin-top:26px;}
+.badge{
+  display:flex; align-items:center; gap:9px;
+  border:1px solid var(--border); background:var(--surface); border-radius:12px;
+  padding:12px 16px; font-size:13.5px; font-weight:600; color:var(--ink);
+}
+.badge .b-dot{width:7px; height:7px; border-radius:50%; background:var(--accent);}
+
+/* ============ WORKFLOW ============ */
+.workflow-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+@media (max-width:900px){.workflow-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.workflow-grid{grid-template-columns:1fr;}}
+.step-card{padding:30px 26px; border-radius:var(--radius-md); background:var(--surface); border:1px solid var(--border); position:relative;}
+.step-num{font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--accent); margin-bottom:18px; display:block;}
+.step-card h3{font-size:18px; margin-bottom:10px;}
+.step-card p{font-size:14px; color:var(--ink-soft);}
+.step-card::after{
+  content:""; position:absolute; top:34px; right:-22px; width:22px; height:1.5px; background:var(--border);
+}
+.workflow-grid > .step-card:last-child::after{display:none;}
+@media (max-width:900px){.step-card::after{display:none;}}
+
+/* ============ WHY ============ */
+.why-section{background:var(--ink); color:#fff; border-radius:var(--radius-lg); padding:70px 56px;}
+.why-section .section-head h2, .why-section .section-head p{color:#fff;}
+.why-section .section-head p{color:rgba(255,255,255,0.62);}
+.why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:30px;}
+@media (max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.why-grid{grid-template-columns:1fr;} .why-section{padding:52px 26px;}}
+.why-item h3{color:#fff; font-size:17px; margin-bottom:10px;}
+.why-item p{color:rgba(255,255,255,0.6); font-size:14px;}
+.why-item .w-icon{color:var(--accent-2); margin-bottom:16px;}
+
+/* ============ CLIENT MESSAGE ============ */
+.client-msg{
+  text-align:center; max-width:760px; margin:0 auto; padding:20px 0 6px;
+}
+.client-msg h2{font-size:clamp(28px,4vw,42px); margin-bottom:20px;}
+.client-msg p{color:var(--ink-soft); font-size:17px; margin-bottom:34px;}
+
+/* ============ CONTACT ============ */
+.contact-box{
+  background:linear-gradient(135deg, var(--accent) 0%, #4327C9 100%);
+  border-radius:var(--radius-lg); padding:76px 56px; text-align:center; color:#fff; position:relative; overflow:hidden;
+}
+.contact-box::before{
+  content:""; position:absolute; width:400px; height:400px; border-radius:50%;
+  background:rgba(255,255,255,0.08); top:-160px; left:-120px;
+}
+.contact-box h2{color:#fff; font-size:clamp(30px,4.4vw,48px); margin-bottom:16px; position:relative;}
+.contact-box p{color:rgba(255,255,255,0.82); font-size:17px; max-width:480px; margin:0 auto 34px; position:relative;}
+.contact-actions{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; position:relative;}
+.contact-box .btn-primary{background:#fff; color:var(--ink);}
+.contact-box .btn-primary:hover{background:#111; color:#fff;}
+.contact-box .btn-outline{border-color:rgba(255,255,255,0.4); color:#fff; background:transparent;}
+.contact-box .btn-outline:hover{border-color:#fff; background:rgba(255,255,255,0.1); color:#fff;}
+@media (max-width:600px){.contact-box{padding:52px 26px;}}
+
+/* ============ FOOTER ============ */
+footer{padding:60px 0 34px; border-top:1px solid var(--border);}
+.footer-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:30px; margin-bottom:40px;}
+.footer-brand .logo{margin-bottom:8px;}
+.footer-brand p{color:var(--ink-faint); font-size:14px;}
+.footer-links{display:flex; gap:30px; flex-wrap:wrap;}
+.footer-links a{font-size:14px; color:var(--ink-soft); transition:color .2s ease;}
+.footer-links a:hover{color:var(--accent);}
+.footer-social{display:flex; gap:12px;}
+.footer-social a{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; color:var(--ink-soft);
+  transition:all .2s ease;
+}
+.footer-social a:hover{background:var(--ink); color:#fff; border-color:var(--ink);}
+.footer-bottom{
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  padding-top:26px; border-top:1px solid var(--border); font-size:13px; color:var(--ink-faint);
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="header">
+  <div class="wrap">
+    <nav>
+      <a href="#home" class="logo">NA<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-accent btn-sm">Let's Work Together</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#home">Home</a>
+  <a href="#work">Work</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-accent" style="font-family:var(--font-body); font-size:15px;">Let's Work Together</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-profile">
+        <img src="assets/images/profile.jpg" alt="Nidal Ahmed" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="fallback" style="display:none;">NA</div>
+      </div>
+      <div class="hero-name">Nidal Ahmed</div>
+      <h1>I Create Visuals That Make <span class="accent-word">Brands</span> Stand Out.</h1>
+      <p class="hero-sub">I create engaging social-media graphics, promotional visuals, product creatives, templates, and short-form content using modern AI-powered creative workflows.</p>
+      <div class="tags">
+        <span class="tag">AI Graphic Designer</span>
+        <span class="tag">BSS Student</span>
+        <span class="tag">Full-Stack Developer</span>
+        <span class="tag">WordPress Developer</span>
+        <span class="tag">AI Enthusiast</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Let's Work Together</a>
+      </div>
+      <div class="hero-credibility">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+        Designing for restaurants, entrepreneurs, brands &amp; modern businesses.
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-badge"><span class="dot"></span>AI-Assisted Design</div>
+      <div class="hv-card hv-1"><img src="assets/images/work-05.jpg" alt="Premium burger creations promotional design" loading="lazy"></div>
+      <div class="hv-card hv-2"><img src="assets/images/work-04.jpg" alt="Sunday special campaign design" loading="lazy"></div>
+      <div class="hv-card hv-3"><img src="assets/images/work-07.jpg" alt="Chicken quesadilla launch design" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELECTED WORK ============ -->
+<section class="section-pad" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Design that helps businesses communicate.</h2>
+      <p>A selection of visual concepts, marketing creatives, and AI-powered designs created for different business and creative use cases.</p>
+    </div>
+
+    <div class="filters reveal" id="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="restaurants">Restaurants</button>
+      <button class="filter-btn" data-filter="products">Products</button>
+      <button class="filter-btn" data-filter="social">Social Media</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+      <button class="filter-btn" data-filter="ai">AI Visuals</button>
+      <button class="filter-btn" data-filter="promotional">Promotional</button>
+    </div>
+
+    <div class="work-grid reveal" id="workGrid"></div>
+  </div>
+</section>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&#10005;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#10094;</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#10095;</button>
+  <div class="lb-inner">
+    <div class="lb-media"><img id="lbImg" src="" alt=""></div>
+    <div class="lb-info">
+      <span class="cat" id="lbCat"></span>
+      <h3 id="lbTitle"></h3>
+      <p id="lbDesc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section-pad" id="services" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What I Can Create</span>
+      <h2>Creative content, built with purpose.</h2>
+      <p>Creative content designed to help businesses look professional, stay consistent, and communicate better online.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M8 21V9"/><path d="M16 21V9"/></svg></div>
+        <h3>Restaurant Marketing</h3>
+        <p>Promotional graphics, food visuals, offers, menu creatives, social-media posts, and campaign content.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3>Social Media Content</h3>
+        <p>Instagram posts, stories, Facebook creatives, promotional banners, and branded templates.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8-4-8 4v10l8 4 8-4V7z"/></svg></div>
+        <h3>Product Advertising</h3>
+        <p>AI-powered product visuals, promotional graphics, advertisements, and e-commerce creatives.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <h3>Business &amp; Personal Branding</h3>
+        <p>Professional visual content for entrepreneurs, startups, and personal brands.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>AI Creative Visuals</h3>
+        <p>Custom AI-assisted visual concepts, product scenes, marketing visuals, and creative compositions.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <h3>Promotional Videos</h3>
+        <p>Short promotional videos, social-media reels, and AI-assisted visual content.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section-pad" id="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <span class="eyebrow">About Me</span>
+      <h2>A Creative Mind With a Technical Edge.</h2>
+      <p>I'm a BSS student, developer, and AI enthusiast with a growing focus on AI-powered creative design. I combine visual creativity with technology to create content that is not only attractive but practical for modern businesses.</p>
+    </div>
+    <div class="reveal">
+      <h3 style="font-size:15px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.08em; margin-bottom:18px;">Skills &amp; Workflow</h3>
+      <div class="badges">
+        <div class="badge"><span class="b-dot"></span>AI Tools &amp; Creative Workflows</div>
+        <div class="badge"><span class="b-dot"></span>Graphic Design</div>
+        <div class="badge"><span class="b-dot"></span>Full-Stack Development</div>
+        <div class="badge"><span class="b-dot"></span>WordPress Development</div>
+        <div class="badge"><span class="b-dot"></span>Web Development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORKFLOW ============ -->
+<section class="section-pad" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How I Work</span>
+      <h2>From Idea to Visual.</h2>
+      <p>AI is part of my workflow, but I still provide creative direction and refinement at every step.</p>
+    </div>
+    <div class="workflow-grid">
+      <div class="step-card reveal"><span class="step-num">01</span><h3>Understand</h3><p>Understand the business, audience, product, and objective.</p></div>
+      <div class="step-card reveal"><span class="step-num">02</span><h3>Concept</h3><p>Develop creative directions and visual concepts.</p></div>
+      <div class="step-card reveal"><span class="step-num">03</span><h3>Create</h3><p>Use AI-powered tools and design workflows to produce the content.</p></div>
+      <div class="step-card reveal"><span class="step-num">04</span><h3>Refine</h3><p>Polish, refine, and prepare the final content for use.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY WORK WITH ME ============ -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="why-section reveal">
+      <div class="section-head">
+        <span class="eyebrow" style="color:var(--accent-2);">Why Work With Me?</span>
+        <h2>Built for how modern businesses move.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="w-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></div>
+          <h3>AI-Powered Efficiency</h3>
+          <p>Modern AI workflows help accelerate creative production.</p>
+        </div>
+        <div class="why-item">
+          <div class="w-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-4 4"/></svg></div>
+          <h3>Business-Focused Design</h3>
+          <p>Designs are created with marketing and communication in mind.</p>
+        </div>
+        <div class="why-item">
+          <div class="w-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>Fast Creative Iteration</h3>
+          <p>Ideas can be explored and refined quickly.</p>
+        </div>
+        <div class="why-item">
+          <div class="w-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <h3>Flexible Content</h3>
+          <p>Create different visuals for social media, products, promotions, and campaigns.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENT MESSAGE ============ -->
+<section class="section-pad" style="padding-top:20px;">
+  <div class="wrap client-msg reveal">
+    <span class="eyebrow" style="justify-content:center;">For Business Owners</span>
+    <h2>Your Business Deserves Better Visuals.</h2>
+    <p>Whether you're running a restaurant, launching a product, building a personal brand, or growing a business online, I can help you create visual content that represents your brand professionally.</p>
+    <a href="#contact" class="btn btn-primary">Let's Create Something</a>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section-pad" id="contact">
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <h2>Let's Work Together</h2>
+      <p>Have a business that needs better visual content? Let's discuss your next project.</p>
+      <div class="contact-actions">
+        <a href="#" id="whatsappBtn" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.71.45 3.38 1.3 4.85L2.05 22l5.36-1.4a9.9 9.9 0 004.63 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>
+          WhatsApp Me
+        </a>
+        <a href="#" id="emailBtn" class="btn btn-outline">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+          Email Me
+        </a>
+        <a href="#" id="linkedinBtn" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 5 3.87 6.02 2.5 6.02S0 5 0 3.5 1.13 1 2.5 1s2.48 1.02 2.48 2.5zM.22 8.24h4.6V23H.22V8.24zM8.34 8.24h4.4v2.02h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.48 3.05 5.48 7.02V23h-4.6v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.66 1.8-2.66 3.65V23h-4.6V8.24z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">NIDAL AHMED</div>
+        <p>AI-Powered Graphic Designer</p>
+      </div>
+      <div class="footer-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social" id="footerSocial"></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Nidal Ahmed. All rights reserved.</span>
+      <span>Designed &amp; built by Nidal Ahmed</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ======================================================
+   CONFIG — edit everything below to make this your own
+   ====================================================== */
+const CONFIG = {
+    name: "Nidal Ahmed",
+    whatsapp: "923085713327",     // e.g. "923001234567" (country code, no + or leading 0)
+    email: "ahmednidal101@gmail.com",
+    linkedin: "https://www.linkedin.com/in/nidal-ahmed-74095431a/",        // e.g. "https://linkedin.com/in/your-name"
+    instagram: "",                        // leave blank to hide the icon
+    behance: "",
+    github: ""
+};
+
+/* Portfolio items — add a new object here (and drop the image into
+   assets/images/) any time you want to add a new project. */
+const portfolioItems = [
+    {
+        title: "Ready-to-Enjoy Menu Design",
+        category: "restaurants",
+        categoryLabel: "Restaurants",
+        image: "assets/images/work-01.jpg",
+        description: "Full promotional menu layout designed for Fufu's Kitchen, organizing burgers, pasta, pakoras and specials into a clear, appetizing single-page format for customer orders."
+    },
+    {
+        title: "Frozen Kitchen Selections Menu",
+        category: "restaurants",
+        categoryLabel: "Restaurants",
+        image: "assets/images/work-02.jpg",
+        description: "Category-based frozen food menu created for Fufu's Kitchen, grouping crispy bites, kababs and koftas with clear pricing to support delivery and wholesale orders."
+    },
+    {
+        title: "Crispy Chicken Tenders Promo",
+        category: "promotional",
+        categoryLabel: "Promotional",
+        image: "assets/images/work-03.jpg",
+        description: "AI-assisted product visual and pricing creative designed to promote a signature fried and frozen menu item across social media."
+    },
+    {
+        title: "Sunday Crunch Break Campaign",
+        category: "promotional",
+        categoryLabel: "Promotional",
+        image: "assets/images/work-04.jpg",
+        description: "Weekend offer creative combining a burger and chicken tenders into a single bundled promotion, built to drive Sunday engagement and orders."
+    },
+    {
+        title: "Premium Burger Creations",
+        category: "products",
+        categoryLabel: "Products",
+        image: "assets/images/work-05.jpg",
+        description: "Side-by-side product advertisement highlighting two signature burgers, their ingredients and pricing, designed for feed and story placements."
+    },
+    {
+        title: "The Heritage Collection Bundle",
+        category: "products",
+        categoryLabel: "Products",
+        image: "assets/images/work-06.jpg",
+        description: "Premium bundle campaign packaging three kabab varieties into one offer, using a warm, elevated visual style to justify a higher price point."
+    },
+    {
+        title: "Chicken Quesadilla Launch",
+        category: "promotional",
+        categoryLabel: "Promotional",
+        image: "assets/images/work-07.jpg",
+        description: "New-product launch creative introducing a menu item, built to generate awareness and first-time orders on social media."
+    }
+];
+
+/* ============ NAV: scroll state + mobile menu ============ */
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive:true });
+
+const burger = document.getElementById('burger');
+const mobilePanel = document.getElementById('mobilePanel');
+burger.addEventListener('click', () => {
+    const open = mobilePanel.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.classList.toggle('is-open', open);
+});
+mobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobilePanel.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+}));
+
+/* ============ REVEAL ON SCROLL ============ */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold:0.12 });
+revealEls.forEach(el => io.observe(el));
+
+/* ============ PORTFOLIO RENDER + FILTER ============ */
+const workGrid = document.getElementById('workGrid');
+let currentFilter = 'all';
+let visibleItems = [];
+
+function categoryIconEmptyMessage(filter){
+    const labels = {
+        social: "Social Media",
+        business: "Business",
+        ai: "AI Visuals"
+    };
+    return labels[filter] || "This category";
+}
+
+function renderGrid(){
+    workGrid.innerHTML = '';
+    visibleItems = currentFilter === 'all'
+        ? portfolioItems
+        : portfolioItems.filter(i => i.category === currentFilter);
+
+    if (visibleItems.length === 0){
+        workGrid.innerHTML = `<div class="empty-state">
+            <strong>More work coming soon</strong>
+            ${categoryIconEmptyMessage(currentFilter)} projects will be added here shortly. Check back soon or get in touch to discuss a custom piece.
+        </div>`;
+        return;
+    }
+
+    visibleItems.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'work-card';
+        card.innerHTML = `
+            <div class="work-media">
+                <img src="${item.image}" alt="${item.title}" loading="lazy">
+                <div class="work-overlay">
+                    <span class="cat">${item.categoryLabel}</span>
+                    <h4>${item.title}</h4>
+                    <span class="view">View Project &#8594;</span>
+                </div>
+            </div>`;
+        card.addEventListener('click', () => openLightbox(idx));
+        workGrid.appendChild(card);
+    });
+}
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderGrid();
+    });
+});
+
+renderGrid();
+
+/* ============ LIGHTBOX ============ */
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+const lbTitle = document.getElementById('lbTitle');
+const lbCat = document.getElementById('lbCat');
+const lbDesc = document.getElementById('lbDesc');
+let lbIndex = 0;
+
+function openLightbox(idx){
+    lbIndex = idx;
+    updateLightbox();
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function updateLightbox(){
+    const item = visibleItems[lbIndex];
+    lbImg.src = item.image;
+    lbImg.alt = item.title;
+    lbTitle.textContent = item.title;
+    lbCat.textContent = item.categoryLabel;
+    lbDesc.textContent = item.description;
+}
+function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.getElementById('lbNext').addEventListener('click', () => { lbIndex = (lbIndex + 1) % visibleItems.length; updateLightbox(); });
+document.getElementById('lbPrev').addEventListener('click', () => { lbIndex = (lbIndex - 1 + visibleItems.length) % visibleItems.length; updateLightbox(); });
+document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % visibleItems.length; updateLightbox(); }
+    if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + visibleItems.length) % visibleItems.length; updateLightbox(); }
+});
+
+/* ============ CONTACT LINKS ============ */
+const waMessage = encodeURIComponent(`Hi ${CONFIG.name.split(' ')[0]}, I saw your portfolio and I'm interested in your graphic design services.`);
+document.getElementById('whatsappBtn').href = `https://wa.me/${CONFIG.whatsapp}?text=${waMessage}`;
+document.getElementById('emailBtn').href = `mailto:${CONFIG.email}`;
+document.getElementById('linkedinBtn').href = CONFIG.linkedin || '#';
+
+/* ============ FOOTER SOCIAL ICONS ============ */
+const socialIcons = {
+    linkedin: `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 5 3.87 6.02 2.5 6.02S0 5 0 3.5 1.13 1 2.5 1s2.48 1.02 2.48 2.5zM.22 8.24h4.6V23H.22V8.24zM8.34 8.24h4.4v2.02h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.48 3.05 5.48 7.02V23h-4.6v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.66 1.8-2.66 3.65V23h-4.6V8.24z"/></svg>`,
+    instagram: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>`,
+    behance: `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-6V5h6v2zM7.3 12.6c1-.5 1.6-1.4 1.6-2.7 0-2.5-1.8-3.4-4-3.4H0v13.1h5.2c2.4 0 4.6-1.1 4.6-3.8 0-1.7-.8-2.7-2.5-3.2zM2.8 8.6h1.9c1 0 1.9.3 1.9 1.4 0 1-.7 1.5-1.8 1.5H2.8V8.6zm2.2 8.7H2.8v-3.4h2.3c1.2 0 2.1.5 2.1 1.7 0 1.3-1 1.7-2.2 1.7zM24 14.1c0-3-1.7-5.4-4.9-5.4-3.1 0-5.2 2.3-5.2 5.4 0 3.1 2 5.4 5.3 5.4 2.3 0 4-1 4.7-3h-2.5c-.4.7-1.1 1-2.1 1-1.5 0-2.4-.9-2.5-2.5h7.1c0-.3.1-.6.1-.9zm-7.2-1.4c.2-1.3 1-2.1 2.3-2.1s2 .9 2.1 2.1h-4.4z"/></svg>`,
+    github: `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.6.5.5 5.7.5 12.2c0 5.2 3.4 9.6 8 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 8-6 8-11.2C23.5 5.7 18.4.5 12 .5z"/></svg>`,
+    whatsapp: `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.71.45 3.38 1.3 4.85L2.05 22l5.36-1.4a9.9 9.9 0 004.63 1.18h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2z"/></svg>`
+};
+const footerSocial = document.getElementById('footerSocial');
+[
+    ['linkedin', CONFIG.linkedin],
+    ['instagram', CONFIG.instagram],
+    ['behance', CONFIG.behance],
+    ['github', CONFIG.github],
+    ['whatsapp', CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}` : '']
+].forEach(([key, url]) => {
+    if (!url || url.startsWith('YOUR_')) return; // hide until the user fills it in
+    const a = document.createElement('a');
+    a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.setAttribute('aria-label', key);
+    a.innerHTML = socialIcons[key];
+    footerSocial.appendChild(a);
+});
+</script>
+</body>
+</html>
